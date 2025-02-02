@@ -1,5 +1,5 @@
 # GazeSearch
-GazeSearch: Radiology Findings Search Benchmark (accepted to WACV 2025 Oral Presentation)
+GazeSearch: Radiology Findings Search Benchmark (accepted to WACV 2025)
 
 ## Overview
 
