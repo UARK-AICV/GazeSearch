@@ -1,27 +1,26 @@
-# GazeSearch
-GazeSearch: Radiology Findings Search Benchmark (accepted to WACV 2025)
+# GazeSearch: Radiology Findings Search Benchmark (accepted to WACV 2025)
+![alt text](imgs/qualitative-results-github-repo.png)
 
 ## Overview
 
-GazeSearch is a curated visual search dataset designed for evaluating search algorithms in radiology findings. The dataset leverages medical eye-tracking data to understand how radiologists visually interpret medical images, with the goal of improving both the accuracy and interpretability of deep learning models for X-ray analysis.
+GazeSearch is a curated visual search dataset designed for evaluating search algorithms in radiology findings. The dataset leverages medical eye-tracking data ([REFLACX](https://physionet.org/content/reflacx-xray-localization/1.0.0/0) and [EGD](https://physionet.org/content/egd-cxr/1.0.0/)) to understand how radiologists visually interpret medical images, with the goal of improving both the accuracy and interpretability of deep learning models for X-ray analysis.
 
-### Key Features
-- Refined eye-tracking data focused on target-present visual search
-- Purposefully aligned fixation sequences for specific findings
-- Comprehensive benchmark for visual search in medical imaging
-- Includes ChestSearch: a baseline scan path prediction model
+<!-- ### Key Features
+- Purposefully aligned eye-tracking data focused on target-present visual search.
+- Comprehensive benchmark for visual search in medical imaging between state-of-the-art visual search models.
+- Includes ChestSearch: a baseline scan path prediction model -->
 
-### Methodology
-Our dataset is created through a refinement method inspired by the target-present visual search challenge, where:
-- Each fixation sequence has a specific radiological finding target
-- Fixations are guided to locate the target
-- Eye-tracking data is processed and standardized for clarity
 
 ## Data Access
 We provide the processed scanpath at data/finding_visual_search_coco_format_train_test_filtered_max_6_split_train_valid_test_2024-07-22.json 
 This data has max length of 6 fixations. To get the length of 7 as in the paper, please add the center point at the beginning of the sequence.
 
 To gain access to the full GazeSearch dataset (including the images from MIMIC-CXR), please contact tp030@uark.edu. You can expect a response within 24-48 hours with further instructions on how to obtain the data.
+
+## ChestSearch Baseline
+The dataset includes source code for ChestSearch, a scan path prediction baseline model specifically designed for GazeSearch. See `src/` for more details.
+
+
 
 ## Citation
 
@@ -35,18 +34,9 @@ If you use the GazeSearch dataset in your research, please cite the following pa
     year={2025}
 }
 ```
-
-## Models
-
-### ChestSearch Baseline
-The dataset includes ChestSearch, a scan path prediction baseline model specifically designed for GazeSearch. This provides a starting point for comparing new approaches.
-
-
-
 ## License
+All software is licensed under the Apache License, Version 2.0 (Apache 2.0); you may not use this file except in compliance with the Apache 2.0 license. You may obtain a copy of the Apache 2.0 license at: https://www.apache.org/licenses/LICENSE-2.0
 
-The GazeSearch dataset is licensed under the Creative Commons Attribution 4.0 International License. You are free to use, share, and adapt the dataset, provided you give appropriate credit to the original authors.
+All other materials are licensed under the Creative Commons Attribution 4.0 International License (CC-BY). You may obtain a copy of the CC-BY license at: https://creativecommons.org/licenses/by/4.0/legalcode
 
-## Contact
-
-For any questions or issues regarding the dataset, please contact tp030@uark.edu.
+Unless required by applicable law or agreed to in writing, all software and materials distributed here under the Apache 2.0 or CC-BY licenses are distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the licenses for the specific language governing permissions and limitations under those licenses.
