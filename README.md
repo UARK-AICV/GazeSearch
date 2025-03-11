@@ -20,6 +20,9 @@ To gain access to the full GazeSearch dataset (including the images from MIMIC-C
 ## ChestSearch Baseline
 The dataset includes source code for ChestSearch, a scan path prediction baseline model specifically designed for GazeSearch. See `src/` for more details.
 
+## Demo 
+I provide an example image in the `example/` folder. You can run the demo by using the `src/demo_medical.ipynb` notebook. 
+The checkpoints are in [here](https://uark-my.sharepoint.com/:u:/g/personal/tp030_uark_edu/EYST3kkJNJpAuadtgt5UILcBaZ8_UFAF0o95adk2p15FvQ?e=lK5Wdm).
 
 
 ## Citation
