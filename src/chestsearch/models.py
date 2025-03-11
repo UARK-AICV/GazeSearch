@@ -505,7 +505,7 @@ class ImageFeatureEncoder(nn.Module):
 
 
 # Dense prediction transformer
-class HumanAttnTransformer(nn.Module):
+class ExpertAttnTransformer(nn.Module):
     def __init__(
         self,
         pa,
@@ -536,7 +536,7 @@ class HumanAttnTransformer(nn.Module):
         is_pretraining: bool = False,
         output_feature_map_name: str = "P4",
     ):
-        super(HumanAttnTransformer, self).__init__()
+        super(ExpertAttnTransformer, self).__init__()
         self.pa = pa
         self.num_decoder_layers = num_decoder_layers
         self.is_pretraining = is_pretraining

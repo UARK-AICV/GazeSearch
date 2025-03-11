@@ -5,8 +5,9 @@ conda env remove --name chestsearch
 conda create -n chestsearch python=3.8 -y
 conda activate chestsearch
 conda install pytorch==1.10.0 torchvision==0.11.0 cudatoolkit=11.3 -c pytorch -y
-
-python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
+conda install mkl==2024.0
+conda install -c conda-forge cudatoolkit-dev=11.3.1
+pip install 'git+https://github.com/facebookresearch/detectron2.git'
 cd ./chestsearch/pixel_decoder/ops
 sh make.sh
 
