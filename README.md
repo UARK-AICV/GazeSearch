@@ -5,11 +5,6 @@
 
 GazeSearch is a curated visual search dataset designed for evaluating search algorithms in radiology findings. The dataset leverages medical eye-tracking data ([REFLACX](https://physionet.org/content/reflacx-xray-localization/1.0.0/0) and [EGD](https://physionet.org/content/egd-cxr/1.0.0/)) to understand how radiologists visually interpret medical images, with the goal of improving both the accuracy and interpretability of deep learning models for X-ray analysis.
 
-<!-- ### Key Features
-- Purposefully aligned eye-tracking data focused on target-present visual search.
-- Comprehensive benchmark for visual search in medical imaging between state-of-the-art visual search models.
-- Includes ChestSearch: a baseline scan path prediction model -->
-
 
 ## Data Access
 We provide the processed scanpath at data/finding_visual_search_coco_format_train_test_filtered_max_6_split_train_valid_test_2024-07-22.json 
@@ -38,8 +33,24 @@ If you use the GazeSearch dataset in your research, please cite the following pa
 }
 ```
 ## License
-All software is licensed under the Apache License, Version 2.0 (Apache 2.0); you may not use this file except in compliance with the Apache 2.0 license. You may obtain a copy of the Apache 2.0 license at: https://www.apache.org/licenses/LICENSE-2.0
+MIT License
 
-All other materials are licensed under the Creative Commons Attribution 4.0 International License (CC-BY). You may obtain a copy of the CC-BY license at: https://creativecommons.org/licenses/by/4.0/legalcode
+Copyright (c) 2024 AICV@University of Arkansas
 
-Unless required by applicable law or agreed to in writing, all software and materials distributed here under the Apache 2.0 or CC-BY licenses are distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the licenses for the specific language governing permissions and limitations under those licenses.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
