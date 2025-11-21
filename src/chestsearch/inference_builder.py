@@ -12,7 +12,7 @@ from torch.utils.data import DataLoader
 from common.inference_dataset import process_data
 from common.inference_utils import get_prior_maps
 
-from .models import FoveatedObjectMemory, HumanAttnTransformer, HumanAttnTransformerV2
+from .models import FoveatedObjectMemory, ExpertAttnTransformer, HumanAttnTransformerV2
 
 
 def build(hparams, dataset_root, device, is_pretraining, is_eval=False, split=1):
@@ -102,7 +102,7 @@ def build(hparams, dataset_root, device, is_pretraining, is_eval=False, split=1)
 
     # Interesting, we have 3 models!!!
     if hparams.Model.name == "chestsearch":
-        model = HumanAttnTransformer(
+        model = ExpertAttnTransformer(
             hparams.Data,
             num_decoder_layers=hparams.Model.n_dec_layers,
             hidden_dim=emb_size,

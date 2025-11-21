@@ -1027,7 +1027,7 @@ class ExpertAttnTransformer(nn.Module):
             dorsal_pos.append(pe.expand(bs, c, h, w).view(bs, c, -1).permute(2, 0, 1))
         if "P2" in self.dorsal_source:
             # C x 20 x 32
-            img_embs = self.input_pro1(img_embs_s2)
+            img_embs = self.input_proj(img_embs_s2)
             bs, c, h, w = img_embs.shape
             pe = self.pixel_loc_emb.forward_featmaps(img_embs.shape[-2:], scale=4)
             img_embs = img_embs.view(bs, c, -1).permute(2, 0, 1)

@@ -15,8 +15,85 @@ To gain access to the full GazeSearch dataset (including the images from MIMIC-C
 ## ChestSearch Baseline
 The dataset includes source code for ChestSearch, a scan path prediction baseline model specifically designed for GazeSearch. See `src/` for more details.
 
-## Demo 
-I provide an example image in the `example/` folder. You can run the demo by using the `src/demo_medical.ipynb` notebook. 
+## Training
+
+### Requirements
+```bash
+pip install torch torchvision numpy scipy tqdm tensorboard
+pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu118/torch2.0/index.html
+```
+
+### Quick Start
+To train the ChestSearch model on the GazeSearch dataset:
+
+```bash
+python train.py \
+    --hparams src/configs/finding_search_box_mask_max6_split_shuffled.json \
+    --dataset-root ./data \
+    --gpu-id 0
+```
+
+### Training Options
+- `--hparams`: Path to hyperparameter configuration file (default: `src/configs/finding_search_box_mask_max6_split_shuffled.json`)
+- `--dataset-root`: Root directory containing the dataset (default: `./data`)
+- `--gpu-id`: GPU device ID to use (default: 0)
+- `--eval-only`: Run evaluation only without training
+- `--eval-mode`: Evaluation mode - choices: `greedy`, `sample` (default: `greedy`)
+- `--disable-saliency`: Disable saliency metrics computation during evaluation
+- `--split`: Dataset split number (default: 1)
+
+### Training Configuration
+The training hyperparameters can be customized in the JSON config file (`src/configs/finding_search_box_mask_max6_split_shuffled.json`):
+
+- **Model Architecture**: Set embedding dimension, number of heads, decoder layers, etc.
+- **Training Parameters**: Batch size, learning rate, max iterations, checkpoint frequency
+- **Loss Functions**: Enable/disable different loss components (next fixation prediction, termination prediction, etc.)
+- **Data Processing**: Image size, patch configuration, max trajectory length
+
+### Example Training Commands
+
+**Standard Training:**
+```bash
+python train.py --dataset-root ./data --gpu-id 0
+```
+
+**Evaluation Only:**
+```bash
+python train.py --dataset-root ./data --eval-only --gpu-id 0
+```
+
+**Training with Custom Config:**
+```bash
+python train.py \
+    --hparams my_custom_config.json \
+    --dataset-root ./data \
+    --gpu-id 0
+```
+
+**Sample-based Evaluation:**
+```bash
+python train.py \
+    --dataset-root ./data \
+    --eval-only \
+    --eval-mode sample \
+    --gpu-id 0
+```
+
+### Monitoring Training
+Training logs and checkpoints are saved to the directory specified in the config file (`Train.log_dir`). TensorBoard logs are automatically generated:
+
+```bash
+tensorboard --logdir ./runs
+```
+
+### Output
+- **Checkpoints**: Saved every N iterations (configurable via `checkpoint_every`)
+- **Evaluation Results**: Metrics saved as JSON in the log directory
+- **Predictions**: Scanpath predictions saved during evaluation
+- **TensorBoard Logs**: Training/validation losses and metrics
+
+## Demo
+I provide an example image in the `example/` folder. You can run the demo by using the `src/demo_medical.ipynb` notebook.
 The checkpoints are in [here](https://uark-my.sharepoint.com/:u:/g/personal/tp030_uark_edu/EYST3kkJNJpAuadtgt5UILcBaZ8_UFAF0o95adk2p15FvQ?e=lK5Wdm).
 
 
